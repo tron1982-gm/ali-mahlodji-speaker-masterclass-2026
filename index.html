@@ -1,0 +1,2102 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+<meta name="theme-color" content="#000000" />
+<title>Speaker Masterclass – Ali Mahlodji</title>
+<meta name="description" content="Die Speaker Masterclass mit Ali Mahlodji. Ein Premium-Programm für alle, die ihre Botschaft auf die großen Bühnen der Welt bringen wollen." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+
+<style>
+  /* ============================================================
+     DESIGN TOKENS  ·  v2 (ali.do inspired)
+     ============================================================ */
+  :root{
+    --bg:        #000000;
+    --bg-elev:   #0e0e0e;
+    --bg-card:   #161616;
+    --bg-card-2: #1c1c1c;
+    --line:      rgba(255,255,255,0.08);
+    --line-strong: rgba(255,255,255,0.16);
+    --ink:       #ffffff;
+    --ink-soft:  #d6d6d6;
+    --ink-mute:  #8a8a8a;
+    --pink:      #ff2d8a;
+    --pink-2:    #ff5aa3;
+    --pink-deep: #d11b6e;
+    --radius-sm: 10px;
+    --radius:    18px;
+    --radius-lg: 28px;
+    --maxw:      1240px;
+    --easing:    cubic-bezier(.2,.65,.2,1);
+    --transition:340ms var(--easing);
+  }
+
+  *,*::before,*::after{ box-sizing:border-box; }
+  html,body{ margin:0; padding:0; }
+  html{ scroll-behavior:smooth; -webkit-text-size-adjust:100%; }
+  body{
+    font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+    font-size:16px; line-height:1.55;
+    color:var(--ink);
+    background:var(--bg);
+    overflow-x:hidden;
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+  }
+  img{ max-width:100%; display:block; }
+  a{ color:inherit; text-decoration:none; }
+  button{ font:inherit; color:inherit; cursor:pointer; border:0; background:none; }
+  ::selection{ background:rgba(255,45,138,.35); color:#fff; }
+
+  /* ============================================================
+     TYPOGRAPHY
+     ============================================================ */
+  h1,h2,h3,h4{ margin:0; line-height:1.1; letter-spacing:-0.02em; font-weight:700; }
+  h1{ font-size:clamp(2.4rem, 6.5vw, 5.4rem); letter-spacing:-0.03em; }
+  h2{ font-size:clamp(1.9rem, 4.5vw, 3.4rem); }
+  h3{ font-size:clamp(1.25rem, 2.4vw, 1.8rem); }
+  p { margin:0 0 1em; color:var(--ink-soft); }
+  .lead{ font-size:clamp(1.05rem, 1.6vw, 1.25rem); color:var(--ink-soft); max-width:62ch; }
+  .eyebrow{
+    display:inline-block;
+    font-size:.72rem;
+    text-transform:uppercase;
+    letter-spacing:0.18em;
+    color:var(--pink);
+    font-weight:600;
+    margin-bottom:14px;
+  }
+
+  /* ============================================================
+     LAYOUT
+     ============================================================ */
+  .container{
+    width:100%;
+    max-width:var(--maxw);
+    margin:0 auto;
+    padding:0 24px;
+    position:relative;
+  }
+  section{ padding:80px 0; position:relative; }
+  @media (min-width:768px){ section{ padding:120px 0; } }
+  .section-head{
+    max-width:780px;
+    margin-bottom:52px;
+  }
+  .section-head.center{
+    margin-left:auto; margin-right:auto;
+    text-align:center;
+  }
+
+  /* ============================================================
+     NAV
+     ============================================================ */
+  .nav{
+    position:fixed; top:0; left:0; right:0;
+    z-index:50;
+    padding:14px 24px;
+    transition:background var(--transition), backdrop-filter var(--transition), border-color var(--transition);
+    border-bottom:1px solid transparent;
+  }
+  .nav.scrolled{
+    background:rgba(0,0,0,0.78);
+    backdrop-filter:blur(18px) saturate(140%);
+    -webkit-backdrop-filter:blur(18px) saturate(140%);
+    border-bottom-color:var(--line);
+  }
+  .nav-inner{
+    max-width:var(--maxw); margin:0 auto;
+    display:flex; align-items:center; justify-content:space-between; gap:16px;
+  }
+  .brand{
+    display:flex; align-items:center; gap:10px;
+    font-weight:700; font-size:.95rem; letter-spacing:-0.01em;
+  }
+  .brand-mark{
+    width:26px; height:26px;
+    background:var(--pink);
+    clip-path:polygon(50% 0,100% 50%,50% 100%,0 50%);
+  }
+  .nav-links{ display:none; gap:32px; align-items:center; }
+  .nav-links a{
+    font-size:.85rem; font-weight:500; color:var(--ink-soft);
+    transition:color var(--transition);
+  }
+  .nav-links a:hover{ color:var(--ink); }
+  @media (min-width:980px){ .nav-links{ display:flex; } }
+
+  /* ============================================================
+     BUTTONS
+     ============================================================ */
+  .btn{
+    display:inline-flex; align-items:center; justify-content:center; gap:8px;
+    padding:14px 24px;
+    border-radius:999px;
+    font-weight:600; font-size:.9rem; letter-spacing:0.01em;
+    transition:transform var(--transition), background var(--transition), color var(--transition), box-shadow var(--transition), border-color var(--transition);
+    white-space:nowrap;
+  }
+  .btn-pink{
+    background:var(--pink);
+    color:#fff;
+    box-shadow:0 12px 30px -10px rgba(255,45,138,.55);
+  }
+  .btn-pink:hover{
+    background:var(--pink-2);
+    transform:translateY(-2px);
+    box-shadow:0 18px 40px -10px rgba(255,45,138,.7);
+  }
+  .btn-light{
+    background:#fff;
+    color:#000;
+  }
+  .btn-light:hover{
+    background:#e9e9e9;
+    transform:translateY(-2px);
+  }
+  .btn-ghost{
+    background:transparent;
+    border:1px solid var(--line-strong);
+    color:var(--ink);
+  }
+  .btn-ghost:hover{
+    border-color:#fff;
+    background:rgba(255,255,255,0.05);
+    transform:translateY(-2px);
+  }
+  .btn .arrow{
+    width:16px; height:16px;
+    transition:transform var(--transition);
+  }
+  .btn:hover .arrow{ transform:translate(3px,-1px); }
+  .btn-sm{ padding:10px 18px; font-size:.82rem; }
+
+  /* ============================================================
+     HERO
+     ============================================================ */
+  .hero{
+    position:relative;
+    min-height:100vh; min-height:100svh;
+    padding:120px 0 80px;
+    display:flex; align-items:center;
+    overflow:hidden;
+    isolation:isolate;
+  }
+  .hero-img{
+    position:absolute; inset:0; z-index:0;
+    overflow:hidden;
+  }
+  .hero-img img{
+    width:100%; height:100%;
+    object-fit:cover; object-position:center 30%;
+    opacity:.55;
+    filter:saturate(.9) contrast(1.05);
+  }
+  .hero-overlay{
+    position:absolute; inset:0; z-index:1; pointer-events:none;
+    background:
+      linear-gradient(180deg, rgba(0,0,0,.65) 0%, rgba(0,0,0,.30) 35%, rgba(0,0,0,.92) 100%),
+      radial-gradient(ellipse at center, transparent 30%, rgba(0,0,0,.45) 100%);
+  }
+  .hero-inner{
+    position:relative; z-index:3;
+    width:100%;
+    max-width:1100px;
+  }
+  .hero h1{
+    text-transform:uppercase;
+    margin-bottom:24px;
+    max-width:18ch;
+  }
+  .hero h1 .accent{
+    color:var(--pink);
+  }
+  .hero-sub{
+    font-size:clamp(1.05rem, 1.5vw, 1.25rem);
+    color:var(--ink-soft);
+    max-width:60ch;
+    margin-bottom:32px;
+  }
+  .hero-cta{
+    display:flex; flex-wrap:wrap; gap:12px;
+    margin-bottom:48px;
+  }
+  .hero-pills{
+    display:flex; flex-wrap:wrap; gap:10px;
+    max-width:780px;
+  }
+  .pill{
+    padding:10px 18px;
+    background:rgba(255,255,255,0.05);
+    border:1px solid var(--line);
+    border-radius:999px;
+    font-size:.82rem; color:var(--ink-soft);
+    backdrop-filter:blur(10px);
+    transition:border-color var(--transition), background var(--transition);
+  }
+  .pill:hover{ border-color:var(--line-strong); background:rgba(255,255,255,0.08); }
+  .pill strong{ color:var(--ink); font-weight:600; }
+
+  /* ============================================================
+     LOGO STRIPS (Trust)
+     ============================================================ */
+  .trust{
+    border-top:1px solid var(--line);
+    border-bottom:1px solid var(--line);
+    padding:50px 0;
+    background:#050505;
+  }
+  .trust-label{
+    text-align:center;
+    font-size:.72rem; text-transform:uppercase; letter-spacing:0.22em;
+    color:var(--ink-mute); font-weight:600;
+    margin-bottom:32px;
+  }
+  .logo-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:28px 24px;
+    align-items:center; justify-items:center;
+  }
+  @media (min-width:640px){ .logo-grid{ grid-template-columns:repeat(4,1fr); } }
+  @media (min-width:980px){ .logo-grid{ grid-template-columns:repeat(7,1fr); gap:32px 28px; } }
+  .logo-item{
+    display:flex; align-items:center; justify-content:center;
+    height:42px;
+    transition:opacity var(--transition);
+    opacity:.65;
+  }
+  .logo-item:hover{ opacity:1; }
+  .logo-item img{
+    height:42px;
+    width:auto;
+    max-width:170px;
+    object-fit:contain;
+    object-position:center;
+  }
+  /* size-tuning */
+  .logo-item.compact img{ height:30px; }
+  .logo-item.wide img{ max-width:210px; }
+  .logo-item.tall img{ height:36px; }
+  /* Wappen-/Schild-förmige Logos: höher als breit, brauchen mehr Höhe */
+  .logo-item.shield{ height:54px; }
+  .logo-item.shield img{ height:54px; max-width:60px; }
+  /* Logos die als dunkel-auf-transparent geliefert werden → invertieren */
+  .logo-item.invert img{ filter:brightness(0) invert(1); }
+  /* Logos mit fest einprogrammiertem schwarzen Hintergrund → Schwarz unsichtbar machen */
+  .logo-item.dark-bg img{ mix-blend-mode:screen; }
+
+  /* ============================================================
+     ABOUT
+     ============================================================ */
+  .about-grid{
+    display:grid; gap:32px;
+    grid-template-columns:1fr;
+    align-items:center;
+  }
+  @media (min-width:980px){
+    .about-grid{ grid-template-columns:1fr 1.3fr; gap:64px; }
+  }
+  .about-frame{
+    position:relative;
+    aspect-ratio:4/5;
+    border-radius:var(--radius-lg);
+    overflow:hidden;
+    background:#111;
+  }
+  .about-frame img{
+    width:100%; height:100%;
+    object-fit:cover; object-position:center;
+    transition:transform 1200ms var(--easing);
+  }
+  .about-frame:hover img{ transform:scale(1.04); }
+  .about-text h2{ margin-bottom:20px; }
+  .about-text p:first-of-type{ font-size:1.1rem; color:var(--ink); }
+  .quote-pull{
+    margin-top:32px;
+    padding:24px 28px;
+    border-left:3px solid var(--pink);
+    background:linear-gradient(90deg, rgba(255,45,138,0.08), transparent 80%);
+    font-size:1.1rem; line-height:1.5;
+    color:var(--ink);
+    border-radius:0 var(--radius) var(--radius) 0;
+  }
+  .quote-pull cite{
+    display:block; margin-top:12px;
+    font-style:normal;
+    font-size:.78rem; letter-spacing:0.18em; text-transform:uppercase;
+    color:var(--ink-mute);
+    font-weight:600;
+  }
+
+  /* ============================================================
+     SECTION CARDS (Pillars / Inclusions / Modules)
+     ============================================================ */
+  .card{
+    position:relative;
+    padding:32px;
+    background:var(--bg-card);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    transition:transform var(--transition), border-color var(--transition), background var(--transition);
+    overflow:hidden;
+  }
+  .card:hover{
+    transform:translateY(-4px);
+    border-color:var(--line-strong);
+    background:var(--bg-card-2);
+  }
+  .card::after{
+    content:""; position:absolute; inset:0;
+    border-radius:inherit;
+    background:radial-gradient(circle at top right, rgba(255,45,138,0.10), transparent 50%);
+    opacity:0; transition:opacity var(--transition);
+    pointer-events:none;
+  }
+  .card:hover::after{ opacity:1; }
+
+  .pillars-grid{
+    display:grid; gap:18px;
+    grid-template-columns:1fr;
+  }
+  @media (min-width:768px){ .pillars-grid{ grid-template-columns:repeat(3,1fr); gap:24px; } }
+  .pillar-num{
+    display:inline-block;
+    font-size:.85rem; font-weight:700;
+    color:var(--pink);
+    margin-bottom:18px;
+    letter-spacing:0.05em;
+  }
+  .pillar h3{ margin-bottom:12px; }
+  .pillar p{ margin:0; font-size:.95rem; }
+
+  /* ============================================================
+     BRIDGE
+     ============================================================ */
+  .bridge{
+    padding:0;
+    position:relative;
+    height:60vh;
+    min-height:380px;
+    max-height:680px;
+    overflow:hidden;
+    isolation:isolate;
+  }
+  @media (min-width:768px){ .bridge{ height:65vh; min-height:480px; max-height:780px; } }
+  .bridge img{
+    width:100%; height:100%;
+    object-fit:cover; object-position:center;
+    transform:scale(1.04);
+    transition:transform 1800ms var(--easing);
+    filter:saturate(.92) contrast(1.04);
+  }
+  .bridge:hover img{ transform:scale(1.10); }
+  .bridge-overlay{
+    position:absolute; inset:0; z-index:1; pointer-events:none;
+    background:
+      linear-gradient(180deg, rgba(0,0,0,.65) 0%, rgba(0,0,0,.25) 50%, rgba(0,0,0,.9) 100%);
+  }
+  .bridge-text{
+    position:relative; z-index:2;
+    height:100%;
+    display:flex; align-items:center; justify-content:center;
+    padding:40px 24px;
+    text-align:center;
+  }
+  .bridge-text p{
+    font-size:clamp(1.5rem, 3.4vw, 2.6rem);
+    font-weight:700;
+    line-height:1.2;
+    color:var(--ink);
+    margin:0;
+    max-width:24ch;
+    text-shadow:0 4px 30px rgba(0,0,0,.7);
+    letter-spacing:-0.02em;
+  }
+  .bridge-text .accent{ color:var(--pink); }
+
+  /* ============================================================
+     CURRICULUM (numbered horizontal rows)
+     ============================================================ */
+  .modules-list{
+    margin-top:48px;
+    border-top:1px solid var(--line);
+    overflow:hidden;
+  }
+  .module-row{
+    display:grid; gap:16px;
+    grid-template-columns:auto 1fr;
+    padding:28px 0;
+    border-bottom:1px solid var(--line);
+    align-items:start;
+    position:relative;
+    transition:padding var(--transition);
+  }
+  @media (min-width:768px){
+    .module-row{
+      grid-template-columns:160px 1fr auto;
+      gap:36px;
+      padding:36px 0;
+      align-items:center;
+    }
+  }
+  .module-row::after{
+    content:""; position:absolute;
+    left:0; right:0; top:0; bottom:0;
+    background:linear-gradient(90deg, rgba(255,45,138,.05), transparent 70%);
+    opacity:0;
+    transition:opacity var(--transition);
+    pointer-events:none;
+  }
+  .module-row:hover::after{ opacity:1; }
+  .module-row:hover{ padding-left:8px; }
+  .module-bignum{
+    font-size:clamp(2.6rem, 5vw, 4rem);
+    font-weight:800;
+    color:var(--pink);
+    line-height:1;
+    letter-spacing:-0.04em;
+    font-variant-numeric:tabular-nums;
+    transition:transform var(--transition);
+  }
+  .module-row:hover .module-bignum{ transform:translateX(-4px); }
+  .module-body{ position:relative; }
+  .module-body h3{
+    font-size:clamp(1.2rem, 2.4vw, 1.55rem);
+    font-weight:700;
+    margin-bottom:8px;
+    transition:color var(--transition);
+  }
+  .module-row:hover .module-body h3{ color:var(--pink-2); }
+  .module-body p{
+    margin:0; color:var(--ink-soft);
+    max-width:60ch; font-size:.95rem;
+  }
+  .module-tag{
+    display:none;
+    font-size:.7rem; letter-spacing:0.16em; text-transform:uppercase;
+    color:var(--ink-mute); font-weight:600;
+    padding:8px 14px;
+    border:1px solid var(--line);
+    border-radius:999px;
+    white-space:nowrap;
+    transition:border-color var(--transition), color var(--transition);
+  }
+  @media (min-width:1024px){ .module-tag{ display:inline-flex; } }
+  .module-row:hover .module-tag{ border-color:var(--pink); color:var(--pink-2); }
+
+  /* ============================================================
+     TIMELINE · DEIN WEG (vertical, ali.do-magenta)
+     ============================================================ */
+  .timeline{
+    position:relative;
+    margin-top:56px;
+    padding-left:24px;
+    max-width:920px;
+    margin-left:auto; margin-right:auto;
+  }
+  .timeline::before{
+    content:"";
+    position:absolute;
+    left:7px; top:8px; bottom:8px;
+    width:2px;
+    background:linear-gradient(180deg, var(--pink), rgba(255,45,138,.4) 40%, transparent);
+  }
+  .tl-step{
+    position:relative;
+    padding-left:32px;
+    padding-bottom:48px;
+  }
+  .tl-step:last-child{ padding-bottom:0; }
+  .tl-step::before{
+    content:""; position:absolute;
+    left:-19px; top:6px;
+    width:16px; height:16px; border-radius:50%;
+    background:var(--pink);
+    box-shadow:0 0 0 4px rgba(255,45,138,.18), 0 0 24px rgba(255,45,138,.5);
+    z-index:1;
+  }
+  .tl-eyebrow{
+    display:inline-block;
+    font-size:.72rem; letter-spacing:.18em; text-transform:uppercase;
+    color:var(--pink); margin-bottom:10px; font-weight:700;
+  }
+  .tl-step h3{ font-size:1.3rem; font-weight:700; margin-bottom:8px; }
+  .tl-step p{ margin:0; color:var(--ink-soft); max-width:60ch; }
+
+  @media (min-width:980px){
+    .timeline{ padding-left:0; }
+    .timeline::before{ left:50%; transform:translateX(-50%); }
+    .tl-step{
+      padding-left:0;
+      width:50%;
+      box-sizing:border-box;
+    }
+    .tl-step:nth-child(odd){
+      padding-right:48px; text-align:right;
+    }
+    .tl-step:nth-child(even){
+      margin-left:50%;
+      padding-left:48px;
+    }
+    .tl-step:nth-child(odd)::before{ left:auto; right:-9px; }
+    .tl-step:nth-child(even)::before{ left:-9px; }
+  }
+
+  /* ============================================================
+     PAYOFF (emotional moment between Journey and FAQ)
+     ============================================================ */
+  .payoff{
+    padding:0;
+    position:relative;
+    height:75vh;
+    min-height:440px;
+    max-height:780px;
+    overflow:hidden;
+    isolation:isolate;
+  }
+  @media (min-width:768px){ .payoff{ height:80vh; min-height:540px; max-height:840px; } }
+  .payoff img{
+    width:100%; height:100%;
+    object-fit:cover; object-position:center 30%;
+    transform:scale(1.04);
+    transition:transform 1800ms var(--easing);
+    filter:saturate(.94) contrast(1.04);
+  }
+  .payoff:hover img{ transform:scale(1.10); }
+  .payoff-overlay{
+    position:absolute; inset:0; z-index:1; pointer-events:none;
+    background:
+      linear-gradient(180deg, rgba(0,0,0,.70) 0%, rgba(0,0,0,.20) 35%, rgba(0,0,0,.92) 100%),
+      linear-gradient(90deg, rgba(0,0,0,.65) 0%, transparent 55%);
+  }
+  .payoff-content{
+    position:absolute; inset:0; z-index:2;
+    display:flex; align-items:flex-end;
+    padding:40px 0 56px;
+  }
+  .payoff-text{ max-width:780px; }
+  .payoff-text .eyebrow{ margin-bottom:16px; }
+  .payoff-text p{
+    font-size:clamp(1.7rem, 4vw, 3rem);
+    font-weight:700;
+    line-height:1.15;
+    color:var(--ink);
+    margin:0;
+    text-shadow:0 4px 30px rgba(0,0,0,.7);
+    letter-spacing:-0.02em;
+    max-width:22ch;
+  }
+  .payoff-text p .accent{ color:var(--pink); }
+
+  /* ============================================================
+     INCLUSIONS
+     ============================================================ */
+  .inclusions-grid{
+    display:grid; gap:14px;
+    grid-template-columns:1fr;
+    margin-top:48px;
+  }
+  @media (min-width:768px){ .inclusions-grid{ grid-template-columns:repeat(2,1fr); gap:18px; } }
+  @media (min-width:1024px){ .inclusions-grid{ grid-template-columns:repeat(3,1fr); gap:18px; } }
+  .inclusion{
+    display:flex; gap:16px; align-items:flex-start;
+    padding:24px;
+    background:var(--bg-card);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    transition:border-color var(--transition), background var(--transition), transform var(--transition);
+  }
+  .inclusion:hover{
+    border-color:var(--line-strong);
+    background:var(--bg-card-2);
+    transform:translateY(-3px);
+  }
+  .inclusion-icon{
+    flex-shrink:0;
+    width:40px; height:40px; border-radius:10px;
+    display:flex; align-items:center; justify-content:center;
+    background:rgba(255,45,138,0.12);
+    color:var(--pink);
+    border:1px solid rgba(255,45,138,0.20);
+  }
+  .inclusion-icon svg{ width:20px; height:20px; }
+  .inclusion h4{
+    font-weight:600; font-size:.98rem;
+    margin:0 0 6px;
+  }
+  .inclusion p{ margin:0; font-size:.88rem; color:var(--ink-mute); }
+
+  /* ============================================================
+     GALLERY
+     ============================================================ */
+  .gallery{ overflow:hidden; }
+  .gallery-grid{
+    display:grid; gap:14px;
+    grid-template-columns:1fr;
+    margin-top:48px;
+  }
+  @media (min-width:680px){
+    .gallery-grid{
+      grid-template-columns:repeat(6,1fr);
+      grid-auto-rows:180px;
+      gap:16px;
+      grid-auto-flow:dense;
+    }
+    .g-1{ grid-column:span 4; grid-row:span 2; }    /* Hero · Hofburg */
+    .g-2{ grid-column:span 2; }                       /* Cohort 2024 group */
+    .g-3{ grid-column:span 2; }                       /* Cohort 2025 group */
+    .g-4{ grid-column:span 3; grid-row:span 2; }     /* Backstage trio · featured */
+    .g-5{ grid-column:span 3; }                       /* Martin live */
+    .g-6{ grid-column:span 3; }                       /* Matthias on stage */
+    .g-7{ grid-column:span 2; grid-row:span 2; }     /* Kathrin · portrait */
+    .g-8{ grid-column:span 2; }                       /* Ali stage vertical */
+    .g-9{ grid-column:span 2; }                       /* Martin closeup */
+    .g-10{ grid-column:span 4; }                      /* Final stage · wide */
+  }
+  @media (max-width:680px){ .gallery-grid > *{ aspect-ratio:4/3; } }
+  .photo{
+    position:relative; overflow:hidden;
+    border-radius:var(--radius);
+    background:#0c0c0c;
+    border:1px solid var(--line);
+    transition:transform var(--transition), border-color var(--transition);
+  }
+  .photo:hover{ border-color:var(--line-strong); }
+  .photo img{
+    width:100%; height:100%;
+    object-fit:cover; object-position:center;
+    transition:transform 1400ms var(--easing), filter var(--transition);
+    filter:saturate(.9) contrast(1.02);
+  }
+  .photo:hover img{ transform:scale(1.06); filter:saturate(1.05) contrast(1.05); }
+  .photo-cap{
+    position:absolute; left:0; right:0; bottom:0;
+    padding:18px 20px;
+    background:linear-gradient(180deg, transparent, rgba(0,0,0,.85));
+    color:#fff; font-size:.85rem;
+    transform:translateY(20%); opacity:0;
+    transition:transform var(--transition), opacity var(--transition);
+  }
+  .photo:hover .photo-cap{ transform:translateY(0); opacity:1; }
+  .photo-cap strong{
+    display:block; font-weight:700; color:var(--pink-2);
+    font-size:.95rem; margin-bottom:2px;
+  }
+
+  /* ============================================================
+     LIGHTBOX
+     ============================================================ */
+  .photo{ cursor:zoom-in; }
+  .lightbox{
+    position:fixed; inset:0;
+    z-index:200;
+    background:rgba(0,0,0,.94);
+    backdrop-filter:blur(10px);
+    -webkit-backdrop-filter:blur(10px);
+    display:none;
+    align-items:center; justify-content:center;
+    padding:80px 24px;
+    opacity:0;
+    transition:opacity 280ms var(--easing);
+  }
+  .lightbox.open{
+    display:flex;
+    opacity:1;
+  }
+  .lightbox-frame{
+    position:relative;
+    width:100%; height:100%;
+    max-width:1400px;
+    display:flex; align-items:center; justify-content:center;
+  }
+  .lightbox-img{
+    max-width:100%;
+    max-height:calc(100vh - 200px);
+    object-fit:contain;
+    border-radius:8px;
+    box-shadow:0 30px 80px rgba(0,0,0,.65);
+    transition:opacity 200ms ease;
+  }
+  .lightbox-img.swap{ opacity:0; }
+  .lightbox-caption{
+    position:absolute; left:0; right:0; bottom:-60px;
+    text-align:center;
+    padding:0 60px;
+    font-size:.9rem; line-height:1.5;
+    color:var(--ink-soft);
+    text-shadow:0 2px 12px rgba(0,0,0,.8);
+  }
+  .lightbox-caption strong{
+    display:block; color:var(--pink-2);
+    font-size:1.05rem; font-weight:600;
+    margin-bottom:4px;
+  }
+  .lb-btn{
+    position:absolute;
+    width:48px; height:48px;
+    border-radius:50%;
+    background:rgba(0,0,0,.5);
+    border:1px solid rgba(255,255,255,.18);
+    color:#fff;
+    display:flex; align-items:center; justify-content:center;
+    transition:background var(--transition), border-color var(--transition), transform var(--transition), color var(--transition);
+    z-index:5;
+    cursor:pointer;
+  }
+  .lb-btn:hover{
+    background:var(--pink);
+    border-color:var(--pink);
+  }
+  .lb-btn:focus-visible{
+    outline:2px solid var(--pink-2); outline-offset:2px;
+  }
+  .lb-btn svg{ width:22px; height:22px; }
+  .lb-close{ top:24px; right:24px; }
+  .lb-close:hover{ transform:rotate(90deg); }
+  .lb-prev{ top:50%; left:24px; transform:translateY(-50%); }
+  .lb-prev:hover{ transform:translateY(-50%) translateX(-3px); }
+  .lb-next{ top:50%; right:24px; transform:translateY(-50%); }
+  .lb-next:hover{ transform:translateY(-50%) translateX(3px); }
+  .lb-counter{
+    position:absolute;
+    top:32px; left:50%;
+    transform:translateX(-50%);
+    color:var(--ink-mute);
+    font-size:.78rem;
+    letter-spacing:.18em;
+    font-weight:700;
+    padding:8px 16px;
+    background:rgba(0,0,0,.4);
+    border:1px solid var(--line);
+    border-radius:999px;
+  }
+  @media (max-width:640px){
+    .lightbox{ padding:60px 12px; }
+    .lb-prev{ left:12px; }
+    .lb-next{ right:12px; }
+    .lb-close{ top:16px; right:16px; }
+    .lb-counter{ top:20px; }
+    .lightbox-caption{ bottom:-50px; padding:0 12px; font-size:.82rem; }
+  }
+  body.lb-locked{ overflow:hidden; }
+
+  /* ============================================================
+     TESTIMONIALS
+     ============================================================ */
+  .testimonial-grid{
+    display:grid; gap:18px;
+    grid-template-columns:1fr;
+    margin-top:48px;
+  }
+  @media (min-width:768px){ .testimonial-grid{ grid-template-columns:repeat(2,1fr); gap:24px; } }
+  @media (min-width:1100px){ .testimonial-grid{ grid-template-columns:repeat(3,1fr); gap:24px; } }
+  .testimonial-card{
+    padding:32px;
+    background:var(--bg-card);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    display:flex; flex-direction:column; gap:24px;
+    transition:transform var(--transition), border-color var(--transition);
+  }
+  .testimonial-card:hover{ transform:translateY(-4px); border-color:var(--line-strong); }
+  .testimonial-card blockquote{
+    margin:0; flex-grow:1;
+    font-size:1.02rem; line-height:1.55;
+    color:var(--ink);
+    font-weight:400;
+  }
+  .testimonial-card blockquote::before{
+    content:"\201C";
+    display:block;
+    font-family:Georgia,serif;
+    font-size:3rem;
+    color:var(--pink);
+    line-height:.5;
+    margin-bottom:12px;
+    height:24px;
+  }
+  .testimonial-author{
+    display:flex; align-items:center; gap:14px;
+    padding-top:18px;
+    border-top:1px solid var(--line);
+  }
+  .avatar{
+    width:48px; height:48px; border-radius:50%;
+    background:linear-gradient(135deg, var(--pink), var(--pink-deep));
+    overflow:hidden;
+    flex-shrink:0;
+    border:1px solid var(--line-strong);
+  }
+  .avatar img{
+    width:100%; height:100%;
+    object-fit:cover; object-position:center top;
+    display:block;
+  }
+  .testimonial-author .name{ font-weight:600; font-size:.95rem; color:var(--ink); }
+  .testimonial-author .role{ font-size:.8rem; color:var(--ink-mute); }
+
+  /* ============================================================
+     JOURNEY (Timeline horizontal cards)
+     ============================================================ */
+  .journey-grid{
+    display:grid; gap:18px;
+    grid-template-columns:1fr;
+    margin-top:48px;
+  }
+  @media (min-width:768px){ .journey-grid{ grid-template-columns:repeat(5,1fr); gap:14px; } }
+  .step{
+    padding:24px;
+    background:var(--bg-card);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    transition:border-color var(--transition), background var(--transition);
+    display:flex; flex-direction:column; gap:10px;
+    position:relative;
+  }
+  .step:hover{ border-color:var(--pink); background:var(--bg-card-2); }
+  .step-num{
+    width:32px; height:32px; border-radius:50%;
+    background:rgba(255,45,138,0.15);
+    color:var(--pink);
+    font-size:.85rem; font-weight:700;
+    display:flex; align-items:center; justify-content:center;
+  }
+  .step h3{ font-size:1.05rem; }
+  .step p{ margin:0; font-size:.85rem; color:var(--ink-mute); }
+
+  /* ============================================================
+     FAQ
+     ============================================================ */
+  .faq-list{ margin-top:48px; max-width:880px; margin-left:auto; margin-right:auto; }
+  .faq-item{ border-bottom:1px solid var(--line); }
+  .faq-q{
+    width:100%;
+    text-align:left;
+    padding:22px 20px;
+    display:flex; justify-content:space-between; align-items:center; gap:24px;
+    font-size:1.08rem; font-weight:600;
+    color:var(--ink);
+    border-radius:14px;
+    transition:background var(--transition), color var(--transition), padding var(--transition);
+  }
+  .faq-q:hover{
+    background:var(--pink);
+    color:#fff;
+  }
+  .faq-q:focus-visible{
+    outline:2px solid var(--pink-2);
+    outline-offset:2px;
+  }
+  .faq-toggle{
+    width:32px; height:32px; flex-shrink:0; border-radius:50%;
+    border:1px solid var(--line-strong);
+    position:relative;
+    display:flex; align-items:center; justify-content:center;
+    transition:background var(--transition), border-color var(--transition);
+  }
+  .faq-toggle::before, .faq-toggle::after{
+    content:""; position:absolute;
+    background:var(--ink);
+    transition:transform var(--transition), background var(--transition);
+  }
+  .faq-toggle::before{ width:11px; height:1px; }
+  .faq-toggle::after{ width:1px; height:11px; }
+  /* Open state */
+  .faq-item.open .faq-toggle{ background:var(--pink); border-color:var(--pink); }
+  .faq-item.open .faq-toggle::before, .faq-item.open .faq-toggle::after{ background:#fff; }
+  .faq-item.open .faq-toggle::after{ transform:scaleY(0); }
+  /* Hover state overrides toggle (but only on closed items — magenta bar is "click to open" affordance) */
+  .faq-q:hover .faq-toggle{
+    background:rgba(255,255,255,.18);
+    border-color:rgba(255,255,255,.5);
+  }
+  .faq-q:hover .faq-toggle::before,
+  .faq-q:hover .faq-toggle::after{ background:#fff; }
+  /* When item is open, suppress the magenta hover-bar (no need for the button affordance) */
+  .faq-item.open .faq-q:hover{
+    background:transparent;
+    color:var(--ink);
+  }
+  .faq-item.open .faq-q:hover .faq-toggle{
+    background:var(--pink);
+    border-color:var(--pink);
+  }
+  .faq-item.open .faq-q:hover .faq-toggle::before,
+  .faq-item.open .faq-q:hover .faq-toggle::after{
+    background:#fff;
+  }
+  .faq-a{ overflow:hidden; max-height:0; transition:max-height 480ms var(--easing); }
+  .faq-a-inner{
+    /* Antwort-Text linksbündig zum Fragentext (.faq-q hat 20px linkes Padding) */
+    padding:0 20px 24px 20px;
+    color:var(--ink-soft);
+    max-width:62ch;
+  }
+  .faq-item.open .faq-a{ max-height:600px; }
+
+  /* ============================================================
+     CLIENT TRUST (companies)
+     ============================================================ */
+  .clients{
+    background:#050505;
+    border-top:1px solid var(--line);
+    border-bottom:1px solid var(--line);
+    padding:60px 0;
+  }
+  .clients-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:28px 24px;
+    align-items:center; justify-items:center;
+  }
+  @media (min-width:640px){ .clients-grid{ grid-template-columns:repeat(4,1fr); } }
+  @media (min-width:980px){ .clients-grid{ grid-template-columns:repeat(8,1fr); gap:32px 28px; } }
+  .clients-grid .logo-item{ font-size:.9rem; }
+
+  /* ============================================================
+     APPLY
+     ============================================================ */
+  .apply{
+    padding:100px 0;
+    position:relative;
+    overflow:hidden;
+    background:#000;
+    isolation:isolate;
+  }
+  .apply-bg{
+    position:absolute; inset:0; z-index:0;
+    pointer-events:none;
+    overflow:hidden;
+  }
+  .apply-bg img{
+    width:100%; height:100%;
+    object-fit:cover;
+    object-position:center 30%;
+    opacity:.28;
+    filter:grayscale(100%) contrast(1.08) brightness(.85);
+    transform:scale(1.04);
+    transition:transform 2400ms var(--easing);
+  }
+  .apply:hover .apply-bg img{ transform:scale(1.08); }
+  .apply::before{
+    content:""; position:absolute; inset:0; z-index:1; pointer-events:none;
+    background:
+      radial-gradient(ellipse at 20% 0%, rgba(255,45,138,0.20), transparent 55%),
+      radial-gradient(ellipse at 80% 100%, rgba(255,45,138,0.12), transparent 60%),
+      linear-gradient(180deg, rgba(0,0,0,.55) 0%, rgba(0,0,0,.20) 50%, rgba(0,0,0,.75) 100%);
+  }
+  .apply-card{
+    position:relative; z-index:2;
+    max-width:880px; margin:0 auto;
+    padding:48px 32px;
+    background:var(--bg-card);
+    border:1px solid var(--line);
+    border-radius:var(--radius-lg);
+    text-align:center;
+  }
+  @media (min-width:768px){ .apply-card{ padding:72px 48px; } }
+  .apply-card h2{ margin-bottom:18px; }
+  .apply-card .lead{ margin:0 auto 36px; }
+  .apply-meta{
+    margin-top:36px;
+    display:flex; gap:20px; flex-wrap:wrap; justify-content:center;
+  }
+  .apply-meta .pill{ background:rgba(255,255,255,0.04); }
+  .apply-form{
+    display:grid; gap:16px;
+    text-align:left;
+    max-width:640px;
+    margin:32px auto 0;
+  }
+  .form-row{
+    display:grid; gap:16px;
+    grid-template-columns:1fr;
+  }
+  @media (min-width:640px){ .form-row{ grid-template-columns:1fr 1fr; } }
+  .field{
+    display:flex; flex-direction:column; gap:6px;
+  }
+  .field .label{
+    font-size:.72rem; letter-spacing:0.18em; text-transform:uppercase;
+    color:var(--ink); font-weight:600;
+  }
+  .field input,
+  .field textarea{
+    width:100%;
+    padding:14px 16px;
+    background:rgba(0,0,0,0.4);
+    border:1px solid var(--line);
+    border-radius:12px;
+    color:var(--ink); font:inherit; font-size:.95rem;
+    transition:border-color var(--transition), background var(--transition), box-shadow var(--transition);
+  }
+  .field textarea{ resize:vertical; min-height:84px; font-family:inherit; }
+  .field input::placeholder, .field textarea::placeholder{ color:rgba(138,138,138,0.7); }
+  .field input:hover, .field textarea:hover{ border-color:var(--line-strong); background:rgba(0,0,0,0.55); }
+  .field input:focus, .field textarea:focus{
+    outline:none;
+    border-color:var(--pink);
+    background:rgba(255,45,138,0.04);
+    box-shadow:0 0 0 3px rgba(255,45,138,0.15);
+  }
+  .checkbox-field{
+    display:flex; align-items:flex-start; gap:12px;
+    padding:14px 16px;
+    border:1px solid var(--line);
+    border-radius:12px;
+    background:rgba(0,0,0,0.3);
+    cursor:pointer;
+    text-align:left;
+    font-size:.85rem; color:var(--ink-soft);
+    line-height:1.45;
+    transition:border-color var(--transition), background var(--transition);
+  }
+  .checkbox-field:hover{ border-color:var(--line-strong); }
+  .checkbox-field input[type="checkbox"]{
+    appearance:none; -webkit-appearance:none;
+    width:18px; height:18px; border-radius:4px;
+    border:1px solid var(--line-strong);
+    background:rgba(0,0,0,.5);
+    flex-shrink:0; margin-top:2px;
+    cursor:pointer; position:relative;
+    transition:background var(--transition), border-color var(--transition);
+  }
+  .checkbox-field input[type="checkbox"]:checked{ background:var(--pink); border-color:var(--pink); }
+  .checkbox-field input[type="checkbox"]:checked::after{
+    content:""; position:absolute;
+    left:5px; top:1px; width:5px; height:10px;
+    border:solid #fff; border-width:0 2px 2px 0; transform:rotate(45deg);
+  }
+  .checkbox-field a{ color:var(--pink-2); border-bottom:1px dotted rgba(255,45,138,0.4); }
+  .checkbox-field a:hover{ border-color:var(--pink); }
+  .form-submit{ margin-top:6px; justify-self:center; min-width:240px; }
+  .form-submit[disabled]{ opacity:.5; cursor:wait; }
+  .form-status{
+    margin-top:12px; text-align:center;
+    font-size:.9rem; color:var(--ink-soft);
+    min-height:1.4em;
+  }
+  .form-status.success{ color:var(--pink-2); }
+  .form-status.error{ color:#ff8a7c; }
+
+  /* ============================================================
+     FOOTER
+     ============================================================ */
+  footer{
+    padding:64px 0 40px;
+    background:#050505;
+    border-top:1px solid var(--line);
+  }
+  .foot-grid{
+    display:grid; gap:32px;
+    grid-template-columns:1fr;
+    margin-bottom:48px;
+  }
+  @media (min-width:768px){ .foot-grid{ grid-template-columns:1.4fr 1fr 1fr; gap:48px; } }
+  .foot-brand p{ margin-top:16px; max-width:42ch; font-size:.9rem; color:var(--ink-mute); }
+  .foot-logo{
+    display:flex; align-items:center; gap:14px;
+    margin-top:24px;
+    padding-top:24px;
+    border-top:1px solid var(--line);
+  }
+  .foot-logo img{
+    height:32px; width:auto;
+    opacity:.85;
+    transition:opacity var(--transition);
+  }
+  .foot-logo:hover img{ opacity:1; }
+  .foot-logo .label{
+    font-size:.72rem; letter-spacing:0.18em; text-transform:uppercase;
+    color:var(--ink-mute); font-weight:600;
+  }
+  .foot-col h4{
+    font-size:.72rem; letter-spacing:0.18em; text-transform:uppercase;
+    color:var(--pink); margin:0 0 18px; font-weight:700;
+  }
+  .foot-col ul{ list-style:none; padding:0; margin:0; display:grid; gap:10px; }
+  .foot-col a{ font-size:.92rem; color:var(--ink-soft); transition:color var(--transition); }
+  .foot-col a:hover{ color:var(--pink-2); }
+  .foot-social{
+    display:flex; gap:12px; align-items:center;
+    margin-top:24px;
+  }
+  .foot-social a{
+    display:inline-flex; align-items:center; justify-content:center;
+    width:40px; height:40px;
+    border-radius:50%;
+    border:1px solid var(--line-strong);
+    color:var(--ink-soft);
+    transition:background var(--transition), border-color var(--transition), color var(--transition), transform var(--transition);
+  }
+  .foot-social a:hover{
+    background:var(--pink);
+    border-color:var(--pink);
+    color:#fff;
+    transform:translateY(-2px);
+  }
+  .foot-social a:focus-visible{
+    outline:2px solid var(--pink-2); outline-offset:2px;
+  }
+  .foot-social a svg{ width:18px; height:18px; }
+  .foot-bottom{
+    padding-top:24px; border-top:1px solid var(--line);
+    display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px;
+    font-size:.78rem; color:var(--ink-mute);
+  }
+  .credit-link{
+    color:var(--ink-soft);
+    border-bottom:1px dotted rgba(255,255,255,.18);
+    transition:color var(--transition), border-color var(--transition);
+  }
+  .credit-link:hover{ color:var(--pink-2); border-color:var(--pink); }
+  .visually-hidden{
+    position:absolute !important;
+    width:1px; height:1px; padding:0; margin:-1px;
+    overflow:hidden; clip:rect(0 0 0 0);
+    white-space:nowrap; border:0;
+  }
+
+  /* ============================================================
+     REVEAL
+     ============================================================ */
+  .reveal{
+    opacity:0; transform:translateY(28px);
+    transition:opacity 800ms var(--easing), transform 800ms var(--easing);
+    transition-delay:var(--reveal-delay,0ms);
+  }
+  .reveal.visible{ opacity:1; transform:translateY(0); }
+  @media (prefers-reduced-motion:reduce){
+    *{ animation-duration:0.001ms !important; transition-duration:0.001ms !important; }
+    .reveal{ opacity:1; transform:none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ============================== NAV ============================== -->
+<header class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="#top" class="brand" aria-label="Ali's Speaker Masterclass">
+      <span class="brand-mark" aria-hidden="true"></span>
+      <span>ALI'S&nbsp;SPEAKER&nbsp;MASTERCLASS</span>
+    </a>
+    <nav class="nav-links" aria-label="Hauptnavigation">
+      <a href="#about">Ali</a>
+      <a href="#philosophy">Philosophie</a>
+      <a href="#curriculum">Module</a>
+      <a href="#cohorts">Jahrgänge</a>
+      <a href="#journey">Ablauf</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <a href="#apply" class="btn btn-pink btn-sm">
+      Bewerben
+      <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+    </a>
+  </div>
+</header>
+
+<!-- ============================== HERO ============================== -->
+<section class="hero" id="top">
+  <div class="hero-img" aria-hidden="true">
+    <img src="photos/ali-stage-pointing.jpg" alt="" fetchpriority="high" decoding="async" />
+  </div>
+  <div class="hero-overlay" aria-hidden="true"></div>
+  <div class="container">
+    <div class="hero-inner">
+      <span class="eyebrow">Speaker Masterclass · mit Ali Mahlodji</span>
+      <h1 class="reveal">Werde der Speaker, der <span class="accent">Räume bewegt.</span></h1>
+      <p class="hero-sub reveal" style="--reveal-delay:120ms">
+        Ein intensives Mentoring-Programm für Menschen, die ihre Botschaft mit Klarheit, Charisma und Substanz auf die großen Bühnen bringen wollen.
+      </p>
+      <div class="hero-cta reveal" style="--reveal-delay:200ms">
+        <a href="#apply" class="btn btn-pink">
+          Jetzt bewerben
+          <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        </a>
+        <a href="#curriculum" class="btn btn-ghost">Programm ansehen</a>
+      </div>
+      <div class="hero-pills reveal" style="--reveal-delay:280ms">
+        <span class="pill"><strong>09.10.2026</strong> · Kick-off</span>
+        <span class="pill"><strong>Wien</strong> · Live &amp; in person</span>
+        <span class="pill"><strong>Kleine Gruppe</strong> · per Bewerbung</span>
+        <span class="pill"><strong>€&nbsp;6.000</strong> · exkl. USt.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== TRUST · PUBLICATIONS ============================== -->
+<section class="trust" aria-label="Bekannt aus">
+  <div class="container">
+    <div class="trust-label">Ali Mahlodjis Leadership &amp; Impact sind bekannt aus</div>
+    <div class="logo-grid">
+      <span class="logo-item"><img src="photos/logos/publications/forbes.svg" alt="Forbes" loading="lazy" /></span>
+      <span class="logo-item"><img src="photos/logos/publications/ft.svg" alt="Financial Times" loading="lazy" /></span>
+      <span class="logo-item wide"><img src="photos/logos/publications/sz.svg" alt="Süddeutsche Zeitung" loading="lazy" /></span>
+      <span class="logo-item wide"><img src="photos/logos/publications/faz.svg" alt="Frankfurter Allgemeine Zeitung" loading="lazy" /></span>
+      <span class="logo-item"><img src="photos/logos/publications/zeit.svg" alt="Die Zeit" loading="lazy" /></span>
+      <span class="logo-item"><img src="photos/logos/publications/wiwo.svg" alt="Wirtschaftswoche" loading="lazy" /></span>
+      <span class="logo-item"><img src="photos/logos/publications/businesspunk.svg" alt="Business Punk" loading="lazy" /></span>
+      <span class="logo-item"><img src="photos/logos/publications/guardian.svg" alt="The Guardian" loading="lazy" /></span>
+      <span class="logo-item"><img src="photos/logos/publications/welt.svg" alt="Die Welt" loading="lazy" /></span>
+      <span class="logo-item"><img src="photos/logos/publications/brandeins.svg" alt="brand eins" loading="lazy" /></span>
+      <span class="logo-item"><img src="photos/logos/publications/businessinsider.svg" alt="Business Insider" loading="lazy" /></span>
+      <span class="logo-item shield invert"><img src="photos/logos/publications/hbr.svg" alt="Harvard Business Review" loading="lazy" /></span>
+      <span class="logo-item"><img src="photos/logos/publications/zdf.svg" alt="ZDF" loading="lazy" /></span>
+      <span class="logo-item"><img src="photos/logos/publications/ard.svg" alt="ARD" loading="lazy" /></span>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== ABOUT ============================== -->
+<section id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="reveal">
+        <figure class="about-frame">
+          <img src="photos/ali-portrait-bw.jpg"
+               alt="Schwarz-weißes Studioportrait von Ali Mahlodji, direkter Blick in die Kamera"
+               loading="lazy" decoding="async" />
+        </figure>
+      </div>
+      <div class="about-text reveal" style="--reveal-delay:140ms">
+        <span class="eyebrow">Dein Mentor</span>
+        <h2>Vom stotternden Flüchtlingskind zur Stimme einer neuen Generation.</h2>
+        <p>
+          Ali Mahlodji wurde 1981 in Teheran geboren, kam als Kind nach Österreich und wuchs im Asylheim auf. Schulabbrecher. Über 40 Jobs. Heute einer der einflussreichsten Vordenker der neuen Arbeitswelt – und einer der gefragtesten Keynote-Speaker im deutschsprachigen Raum.
+        </p>
+        <p>
+          CEO von <em>futureOne</em>, EU Youth Ambassador, UN World Summit Award Preisträger, fünffacher Bestsellerautor. Über 1.400 Keynotes in mehr als 30 Ländern.
+        </p>
+        <blockquote class="quote-pull">
+          „Eine Bühne ist kein Performance-Raum. Sie ist ein Raum für Wahrheit. Wer das versteht, hört auf zu &#39;sprechen&#39; – und beginnt, Menschen zu erreichen."
+          <cite>— Ali Mahlodji</cite>
+        </blockquote>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== METRICS ============================== -->
+<section style="padding-top:0;">
+  <div class="container">
+    <div class="pillars-grid" style="grid-template-columns:repeat(2,1fr);">
+      <div class="card reveal" style="text-align:center;">
+        <div style="font-size:clamp(2.4rem,5vw,3.6rem); font-weight:800; color:var(--pink); line-height:1;">2.000+</div>
+        <div style="margin-top:10px; font-size:.78rem; letter-spacing:0.16em; text-transform:uppercase; color:var(--ink-mute); font-weight:600;">Vorträge</div>
+      </div>
+      <div class="card reveal" style="--reveal-delay:80ms; text-align:center;">
+        <div style="font-size:clamp(2.4rem,5vw,3.6rem); font-weight:800; color:var(--pink); line-height:1;">1&nbsp;Mio+</div>
+        <div style="margin-top:10px; font-size:.78rem; letter-spacing:0.16em; text-transform:uppercase; color:var(--ink-mute); font-weight:600;">inspirierte Menschen</div>
+      </div>
+      <div class="card reveal" style="--reveal-delay:160ms; text-align:center;">
+        <div style="font-size:clamp(2.4rem,5vw,3.6rem); font-weight:800; color:var(--pink); line-height:1;">140+</div>
+        <div style="margin-top:10px; font-size:.78rem; letter-spacing:0.16em; text-transform:uppercase; color:var(--ink-mute); font-weight:600;">Keynotes / Jahr</div>
+      </div>
+      <div class="card reveal" style="--reveal-delay:240ms; text-align:center;">
+        <div style="font-size:clamp(2.4rem,5vw,3.6rem); font-weight:800; color:var(--pink); line-height:1;">20+</div>
+        <div style="margin-top:10px; font-size:.78rem; letter-spacing:0.16em; text-transform:uppercase; color:var(--ink-mute); font-weight:600;">Internationale Awards</div>
+      </div>
+    </div>
+  </div>
+  <style>
+    @media (min-width:768px){
+      section[style*="padding-top:0"] .pillars-grid{ grid-template-columns:repeat(4,1fr) !important; }
+    }
+  </style>
+</section>
+
+<!-- ============================== PHILOSOPHY ============================== -->
+<section id="philosophy">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Philosophie</span>
+      <h2>Drei Säulen, auf denen <span style="color:var(--pink);">große Speaker</span> stehen.</h2>
+      <p class="lead">
+        Charisma ist keine Begabung. Es ist die Summe aus Klarheit, Mut und Handwerk. Genau hier setzt die Speaker Masterclass an.
+      </p>
+    </div>
+    <div class="pillars-grid">
+      <article class="card pillar reveal">
+        <span class="pillar-num">01 · WAHRHEIT</span>
+        <h3>Was du wirklich zu sagen hast</h3>
+        <p>Wir entdecken zuerst, was du wirklich zu sagen hast – jenseits der Phrasen, die im Markt kursieren. Deine Geschichte ist dein Differenzierungsmerkmal.</p>
+      </article>
+      <article class="card pillar reveal" style="--reveal-delay:120ms">
+        <span class="pillar-num">02 · HANDWERK</span>
+        <h3>Tools, die sofort funktionieren</h3>
+        <p>Storytelling, Stimme, Präsenz, Dramaturgie. Über 2.000 Bühnen verdichtet in Werkzeuge, die du sofort nutzen kannst – inklusive moderner KI-Tools.</p>
+      </article>
+      <article class="card pillar reveal" style="--reveal-delay:240ms">
+        <span class="pillar-num">03 · MARKT</span>
+        <h3>Sichtbar werden, gebucht werden</h3>
+        <p>Eine starke Botschaft alleine reicht nicht. Du lernst, wie du als Speaker positioniert, gebucht und nachhaltig erfolgreich wirst.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== BRIDGE ============================== -->
+<section class="bridge" aria-label="Cinematischer Übergang zur Curriculum-Sektion">
+  <img src="photos/ali-stage-ballroom.jpg"
+       alt="Eleganter Saal mit Lustern, Bühne mit großem Screen, Publikum an Tischen während eines Vortrags"
+       loading="lazy" decoding="async" />
+  <div class="bridge-overlay" aria-hidden="true"></div>
+  <div class="bridge-text reveal">
+    <p>
+      Hier endet das Reden über Bühnen.<br />
+      Hier beginnt das <span class="accent">Arbeiten an deiner</span>.
+    </p>
+  </div>
+</section>
+
+<!-- ============================== CURRICULUM ============================== -->
+<section id="curriculum">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Curriculum</span>
+      <h2>Sechs Module. <span style="color:var(--pink);">Eine Transformation.</span></h2>
+      <p class="lead">
+        Jedes Modul ist eine Stufe – aufeinander aufbauend, mit klarem Fokus, viel Live-Praxis und persönlichem Feedback.
+      </p>
+    </div>
+    <div class="modules-list">
+      <article class="module-row reveal">
+        <div class="module-bignum">01</div>
+        <div class="module-body">
+          <h3>Intensives Bühnentraining</h3>
+          <p>Wie du mit deiner Geschichte fesselst und ein Publikum von der ersten Sekunde an mitnimmst.</p>
+        </div>
+        <span class="module-tag">Live · Wien</span>
+      </article>
+      <article class="module-row reveal">
+        <div class="module-bignum">02</div>
+        <div class="module-body">
+          <h3>Authentische Performance</h3>
+          <p>Persönliche Bühnenpräsenz entwickeln – mit präzisem Live-Feedback in einem geschützten Raum.</p>
+        </div>
+        <span class="module-tag">Live · Wien</span>
+      </article>
+      <article class="module-row reveal">
+        <div class="module-bignum">03</div>
+        <div class="module-body">
+          <h3>1:1 Mentoring mit Ali</h3>
+          <p>Individuelles Coaching, um dein volles Potenzial zu entfalten – persönlich, ehrlich, fordernd.</p>
+        </div>
+        <span class="module-tag">1:1 mit Ali</span>
+      </article>
+      <article class="module-row reveal">
+        <div class="module-bignum">04</div>
+        <div class="module-body">
+          <h3>Marketing &amp; Positionierung</h3>
+          <p>Wie du dich als Speaker im Markt sichtbar machst, gefunden und gebucht wirst.</p>
+        </div>
+        <span class="module-tag">Markt &amp; Brand</span>
+      </article>
+      <article class="module-row reveal">
+        <div class="module-bignum">05</div>
+        <div class="module-body">
+          <h3>Storytelling, das bewegt</h3>
+          <p>Botschaften so verpacken, dass sie berühren und im Gedächtnis bleiben – mit Strukturen, die funktionieren.</p>
+        </div>
+        <span class="module-tag">Story &amp; Craft</span>
+      </article>
+      <article class="module-row reveal">
+        <div class="module-bignum">06</div>
+        <div class="module-body">
+          <h3>Backstage Insider</h3>
+          <p>Insider-Wissen aus 2.000+ Vorträgen: was vor, hinter und nach der Bühne wirklich zählt.</p>
+        </div>
+        <span class="module-tag">Insider</span>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== INCLUSIONS ============================== -->
+<section style="padding-top:0;">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Was du bekommst</span>
+      <h2>Mehr als ein Kurs – ein <span style="color:var(--pink);">Ökosystem.</span></h2>
+      <p class="lead">
+        Du bekommst nicht nur Wissen. Du bekommst Begleitung, Werkzeuge und ein Netzwerk, das weit über die Module hinausgeht.
+      </p>
+    </div>
+    <div class="inclusions-grid">
+      <article class="inclusion reveal">
+        <div class="inclusion-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 7h18M7 3v4M17 3v4"/><rect x="3" y="7" width="18" height="14" rx="2"/></svg>
+        </div>
+        <div>
+          <h4>Exklusive Pre-Tasks</h4>
+          <p>Vorbereitende Aufgaben, die deinen Speaker-Boost zünden, bevor das erste Modul startet.</p>
+        </div>
+      </article>
+      <article class="inclusion reveal" style="--reveal-delay:60ms">
+        <div class="inclusion-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-7 8-7s8 3 8 7"/></svg>
+        </div>
+        <div>
+          <h4>1:1 Mentoring mit Ali</h4>
+          <p>Persönliche Sessions direkt mit Ali – kein Skript, kein Funnel. Dein Anliegen, deine Bühne, dein Tempo.</p>
+        </div>
+      </article>
+      <article class="inclusion reveal" style="--reveal-delay:120ms">
+        <div class="inclusion-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2v4M12 18v4M2 12h4M18 12h4"/><circle cx="12" cy="12" r="5"/></svg>
+        </div>
+        <div>
+          <h4>KI-Tools, die wirklich helfen</h4>
+          <p>Kuratierte AI-Werkzeuge für Recherche, Storyboarding und Content – sinnvoll integriert.</p>
+        </div>
+      </article>
+      <article class="inclusion reveal" style="--reveal-delay:180ms">
+        <div class="inclusion-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M21 11.5a8.4 8.4 0 0 1-8.5 8.5A8.4 8.4 0 0 1 4 11.5 8.4 8.4 0 0 1 12.5 3 8.4 8.4 0 0 1 21 11.5z"/><path d="m8 14 1.5-3 2 2 4-5"/></svg>
+        </div>
+        <div>
+          <h4>WhatsApp-Begleitung</h4>
+          <p>Direkter Draht zwischen den Sessions. Wenn's zwickt, wenn du eine Bühne hast – wir sind da.</p>
+        </div>
+      </article>
+      <article class="inclusion reveal" style="--reveal-delay:240ms">
+        <div class="inclusion-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg>
+        </div>
+        <div>
+          <h4>Externe Top-Experten</h4>
+          <p>Gastsessions mit Stimmen aus PR, Branding, Voice und Stage Production – über die reine Bühne hinaus.</p>
+        </div>
+      </article>
+      <article class="inclusion reveal" style="--reveal-delay:300ms">
+        <div class="inclusion-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 4h16v12H5l-1 4z"/></svg>
+        </div>
+        <div>
+          <h4>Premium-Community</h4>
+          <p>Ein bewusst kleiner Kreis aus Unternehmer:innen, Expert:innen und Visionär:innen – auf Augenhöhe.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== GALLERY ============================== -->
+<section class="gallery" id="cohorts">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Bisherige Jahrgänge</span>
+      <h2>Momente, die <span style="color:var(--pink);">geblieben sind.</span></h2>
+      <p class="lead">
+        Aus den vergangenen Jahrgängen sind nicht nur bessere Speaker hervorgegangen – sondern Menschen, die heute Räume füllen, Bewegungen anstoßen, Bücher schreiben.
+      </p>
+    </div>
+    <div class="gallery-grid">
+      <div class="photo g-1">
+        <img src="photos/ali-stage.jpg" alt="Ali Mahlodji auf einer großen Bühne in Wien, vollbesetzter Saal, dramatische Beleuchtung" loading="lazy" decoding="async" />
+        <div class="photo-cap"><strong>Wo wir hinwollen</strong>Echte Bühnen, echte Reichweite</div>
+      </div>
+      <div class="photo g-2">
+        <img src="photos/cohort-2024-group.jpg" alt="Gruppenfoto NEUN MAL NEUN Speakernight, Jahrgang 2023/2024, Abschlussevent im Casa Nova Wien" loading="lazy" decoding="async" />
+        <div class="photo-cap"><strong>NEUN MAL NEUN Speakernight</strong>Jahrgang 2023/2024 · März 2024 · Casa Nova Wien</div>
+      </div>
+      <div class="photo g-3">
+        <img src="photos/cohort-2025-group.webp" alt="Gruppenfoto Mensch hoch 9, Jahrgang 2024/2025, Abschlussevent im Casa Nova Wien" loading="lazy" decoding="async" />
+        <div class="photo-cap"><strong>Mensch hoch 9</strong>Jahrgang 2024/2025 · 1. April 2025 · Casa Nova Wien</div>
+      </div>
+      <div class="photo g-4">
+        <img src="photos/ali-juliana-manuela.jpg" alt="Ali Mahlodji mit Juliana Käfer und Manuela Vorwerk backstage, ausgelassener Moment" loading="lazy" decoding="async" />
+        <div class="photo-cap"><strong>Backstage 2024</strong>Ali, Juliana Käfer &amp; Manuela Vorwerk · Casa Nova Wien</div>
+      </div>
+      <div class="photo g-5">
+        <img src="photos/voices-of-impact-2026.jpg" alt="Gruppenfoto Voices of Impact, Jahrgang 2025/2026, Abschlussevent im Palais Berg Wien" loading="lazy" decoding="async" />
+        <div class="photo-cap"><strong>Voices of Impact</strong>Jahrgang 2025/2026 · 7. April 2026 · Palais Berg Wien</div>
+      </div>
+      <div class="photo g-6">
+        <img src="photos/matthias-stage.jpg" alt="Matthias Lechner auf der Bühne im Casa Nova Wien, große Screens hinter ihm" loading="lazy" decoding="async" />
+        <div class="photo-cap"><strong>Matthias Lechner · Live</strong>Final Stage Jahrgang 2023/24 · Casa Nova Wien</div>
+      </div>
+      <div class="photo g-7">
+        <img src="photos/kathrin-stern-stage.webp" alt="Kathrin Stern, Geschäftsführerin sozKom und Alumna der Speaker Masterclass, live im Casa Nova Wien" loading="lazy" decoding="async" />
+        <div class="photo-cap"><strong>Kathrin Stern · Alumna</strong>sozKom · Abschlussevent 1. April · Casa Nova Wien</div>
+      </div>
+      <div class="photo g-8">
+        <img src="photos/ali-stage-vertical.jpg" alt="Ali Mahlodji auf der Bühne vor rotem Vorhang, im Gespräch mit dem Publikum" loading="lazy" decoding="async" />
+        <div class="photo-cap"><strong>Ali in seinem Element</strong>Wo aus Botschaft Bewegung wird</div>
+      </div>
+      <div class="photo g-9">
+        <img src="photos/martin-stage-closeup.jpg" alt="Martin Fraisl in einem emotionalen Moment auf der Bühne, Hand auf der Brust" loading="lazy" decoding="async" />
+        <div class="photo-cap"><strong>Wenn die Worte sitzen</strong>Authentische Bühnenpräsenz</div>
+      </div>
+      <div class="photo g-10">
+        <img src="photos/martin-stage-hinten.jpg" alt="Blick von der Bühne auf das Publikum während eines Vortrags – atmosphärische rote Beleuchtung" loading="lazy" decoding="async" />
+        <div class="photo-cap"><strong>Final Stage</strong>~300 Menschen im Publikum · Abschlussevent</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== TESTIMONIALS ============================== -->
+<section>
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Stimmen aus der Masterclass</span>
+      <h2>Was Alumni heute <span style="color:var(--pink);">anders machen.</span></h2>
+    </div>
+    <div class="testimonial-grid">
+      <article class="testimonial-card reveal">
+        <blockquote>
+          Ich bin da auf der Bühne gestanden, null nervös, hab einfach erzählt und es hat sich brutal gut angefühlt. […] Vor knapp 300 Leuten meine Geschichte zu teilen, fühlt sich einfach richtig geil an.
+        </blockquote>
+        <div class="testimonial-author">
+          <div class="avatar"><img src="photos/martin-portrait.jpg" alt="Portrait Martin Fraisl" loading="lazy" decoding="async" /></div>
+          <div>
+            <div class="name">Martin Fraisl</div>
+            <div class="role">Profifußballer · Alumnus</div>
+          </div>
+        </div>
+      </article>
+      <article class="testimonial-card reveal" style="--reveal-delay:80ms">
+        <blockquote>
+          Die Masterclass ist intensiv und ehrlich. Man arbeitet hart an seiner Botschaft, bis sie wirklich sitzt.
+        </blockquote>
+        <div class="testimonial-author">
+          <div class="avatar"><img src="photos/marietta-portrait.jpg" alt="Portrait Marietta Babos" loading="lazy" decoding="async" /></div>
+          <div>
+            <div class="name">Marietta Babos</div>
+            <div class="role">Gründerin Damensache · Alumna</div>
+          </div>
+        </div>
+      </article>
+      <article class="testimonial-card reveal" style="--reveal-delay:160ms">
+        <blockquote>
+          Ein Deep Dive in die eigene Geschichte. Ich habe gelernt, meine wissenschaftlichen Inhalte bühnentauglich und emotional zu verpacken.
+        </blockquote>
+        <div class="testimonial-author">
+          <div class="avatar"><img src="photos/bettina-portrait.jpg" alt="Portrait Bettina Ludwig" loading="lazy" decoding="async" /></div>
+          <div>
+            <div class="name">Bettina Ludwig</div>
+            <div class="role">Kulturanthropologin · Alumna</div>
+          </div>
+        </div>
+      </article>
+      <article class="testimonial-card reveal" style="--reveal-delay:60ms">
+        <blockquote>
+          Die Masterclass war der entscheidende Kick für meine Speaker-Karriere. Sie schafft einen Raum, in dem man über sich hinauswächst.
+        </blockquote>
+        <div class="testimonial-author">
+          <div class="avatar"><img src="photos/juliana-portrait.png" alt="Portrait Juliana Käfer" loading="lazy" decoding="async" /></div>
+          <div>
+            <div class="name">Juliana Käfer</div>
+            <div class="role">Life &amp; Business Coach · Alumna</div>
+          </div>
+        </div>
+      </article>
+      <article class="testimonial-card reveal" style="--reveal-delay:140ms">
+        <blockquote>
+          Die Masterclass war für mich der Gamechanger, um als Speakerin authentisch und klar wahrgenommen zu werden. Sie hat mir geholfen, meine Botschaft zu schärfen und mit Mut auf die Bühne zu gehen.
+        </blockquote>
+        <div class="testimonial-author">
+          <div class="avatar"><img src="photos/kathrin-stern-stage.webp" alt="Portrait Kathrin Stern" loading="lazy" decoding="async" /></div>
+          <div>
+            <div class="name">Kathrin Stern</div>
+            <div class="role">Geschäftsführerin sozKom · Alumna</div>
+          </div>
+        </div>
+      </article>
+      <article class="testimonial-card reveal" style="--reveal-delay:220ms">
+        <blockquote>
+          Mut braucht Angst und einen Schritt mehr! Und diesen einen Schritt tat ich, denn: Wer Veränderung predigt, muss sie selbst gelebt haben.
+        </blockquote>
+        <div class="testimonial-author">
+          <div class="avatar"><img src="photos/daniela-portrait.webp" alt="Portrait Daniela Fuks" loading="lazy" decoding="async" /></div>
+          <div>
+            <div class="name">Daniela Fuks</div>
+            <div class="role">Alumna</div>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== CLIENTS ============================== -->
+<section class="clients" aria-label="Vertrauen Ali Mahlodji">
+  <div class="container">
+    <div class="trust-label">Unternehmen, Leader und internationale Konferenzen vertrauen Ali Mahlodji</div>
+    <div class="clients-grid">
+      <span class="logo-item"><img src="photos/logos/clients/Siemens.webp" alt="Siemens" loading="lazy" /></span>
+      <span class="logo-item dark-bg"><img src="photos/logos/clients/telekom.webp" alt="Deutsche Telekom" loading="lazy" /></span>
+      <span class="logo-item dark-bg"><img src="photos/logos/clients/audi.webp" alt="Audi" loading="lazy" /></span>
+      <span class="logo-item"><img src="photos/logos/clients/SAP.webp" alt="SAP" loading="lazy" /></span>
+      <span class="logo-item"><img src="photos/logos/clients/mastercard.png" alt="Mastercard" loading="lazy" /></span>
+      <span class="logo-item"><img src="photos/logos/clients/Google.png" alt="Google" loading="lazy" /></span>
+      <span class="logo-item"><img src="photos/logos/clients/BMW.png" alt="BMW" loading="lazy" /></span>
+      <span class="logo-item"><img src="photos/logos/clients/Lufthansa.png" alt="Lufthansa" loading="lazy" /></span>
+      <span class="logo-item"><img src="photos/logos/clients/un.webp" alt="United Nations" loading="lazy" /></span>
+      <span class="logo-item"><img src="photos/logos/clients/oebb.png" alt="ÖBB" loading="lazy" /></span>
+      <span class="logo-item"><img src="photos/logos/clients/DB.png" alt="Deutsche Bahn" loading="lazy" /></span>
+      <span class="logo-item"><img src="photos/logos/clients/A1.png" alt="A1" loading="lazy" /></span>
+      <span class="logo-item"><img src="photos/logos/clients/Spar.webp" alt="Spar" loading="lazy" /></span>
+      <span class="logo-item"><img src="photos/logos/clients/roche.webp" alt="Roche" loading="lazy" /></span>
+      <span class="logo-item"><img src="photos/logos/clients/Caritas.webp" alt="Caritas" loading="lazy" /></span>
+      <span class="logo-item"><img src="photos/logos/clients/Channel.png" alt="Channel" loading="lazy" /></span>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== JOURNEY ============================== -->
+<section id="journey">
+  <div class="container">
+    <div class="section-head center reveal">
+      <span class="eyebrow">Dein Weg</span>
+      <h2>Von der Bewerbung bis zur <span style="color:var(--pink);">großen Bühne.</span></h2>
+    </div>
+    <div class="timeline">
+      <article class="tl-step reveal">
+        <div class="tl-eyebrow">01 · Bewerbung</div>
+        <h3>Du bewirbst dich</h3>
+        <p>Kurzes Formular mit deiner Motivation, deinem Hintergrund und der Bühne, die du dir wünschst. Pragmatisch, kein Roman.</p>
+      </article>
+      <article class="tl-step reveal">
+        <div class="tl-eyebrow">02 · Auswahl</div>
+        <h3>Persönliches Gespräch</h3>
+        <p>Wir telefonieren. Wir schauen, ob es passt – auf beiden Seiten. Qualität vor Quantität ist hier kein Marketingsatz.</p>
+      </article>
+      <article class="tl-step reveal">
+        <div class="tl-eyebrow">03 · Pre-Phase</div>
+        <h3>Pre-Tasks &amp; Onboarding</h3>
+        <p>Du bekommst Vorbereitungsaufgaben, die zünden, bevor das erste Modul startet. Plus: Zugang zur Community.</p>
+      </article>
+      <article class="tl-step reveal">
+        <div class="tl-eyebrow">04 · Module</div>
+        <h3>Sechs Module live in Wien</h3>
+        <p>Sechs Module mit Live-Training, 1:1 Mentoring, externen Expert:innen und intensivem Peer-Austausch.</p>
+      </article>
+      <article class="tl-step reveal">
+        <div class="tl-eyebrow">05 · Final Stage</div>
+        <h3>Deine echte Bühne</h3>
+        <p>Du gehst nicht raus mit Theorie. Du gehst raus mit einem belastbaren Auftritt – und mit einem Plan, ihn dorthin zu bringen, wo er hingehört.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== PAYOFF (emotional moment) ============================== -->
+<section class="payoff" aria-label="Der Moment auf der Bühne">
+  <img src="photos/ali-stage-selfie.jpg"
+       alt="Ali Mahlodji macht ein Selfie auf der Bühne mit dem jubelnden Publikum"
+       loading="lazy" decoding="async" />
+  <div class="payoff-overlay" aria-hidden="true"></div>
+  <div class="payoff-content">
+    <div class="container">
+      <div class="payoff-text reveal">
+        <span class="eyebrow">Der Moment</span>
+        <p>Das ist der Moment, <span class="accent">für den du arbeitest.</span></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== FAQ ============================== -->
+<section id="faq">
+  <div class="container">
+    <div class="section-head center reveal">
+      <span class="eyebrow">Häufige Fragen</span>
+      <h2>Was du <span style="color:var(--pink);">wissen solltest.</span></h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item reveal">
+        <button class="faq-q" aria-expanded="false">
+          Für wen ist die Masterclass gedacht?
+          <span class="faq-toggle" aria-hidden="true"></span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          Für Menschen mit Substanz, die ihre Botschaft auf die großen Bühnen bringen wollen: Unternehmer:innen, Expert:innen, Führungskräfte, Aktivist:innen, Kreative. Vorerfahrung als Speaker ist kein Muss – innere Klarheit ist wichtiger.
+        </div></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q" aria-expanded="false">
+          Wie groß ist der Jahrgang?
+          <span class="faq-toggle" aria-hidden="true"></span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          Bewusst klein. Wir arbeiten so eng mit jedem Teilnehmer und jeder Teilnehmerin, dass eine Skalierung dem Format widersprechen würde.
+        </div></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q" aria-expanded="false">
+          Wann startet der nächste Jahrgang?
+          <span class="faq-toggle" aria-hidden="true"></span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          Der nächste Kick-off ist am <strong>09.10.2026</strong> in Wien. Die genaue Location erhältst du nach Annahme deiner Bewerbung.
+        </div></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q" aria-expanded="false">
+          Was kostet die Teilnahme?
+          <span class="faq-toggle" aria-hidden="true"></span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          Das Investment beträgt <strong>€&nbsp;6.000 (exkl.&nbsp;USt.)</strong> und beinhaltet alle Module, das 1:1 Mentoring mit Ali, die Pre-Tasks, die KI-Tools, die WhatsApp-Begleitung und die Sessions mit externen Expert:innen. Anreise und Unterkunft sind nicht enthalten.
+        </div></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q" aria-expanded="false">
+          Ist die Masterclass auf Deutsch oder Englisch?
+          <span class="faq-toggle" aria-hidden="true"></span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          Die Masterclass läuft primär auf Deutsch. Wenn du auf Englisch sprichst und auf englischsprachigen Bühnen unterwegs sein willst, sprich uns an – wir finden eine Lösung.
+        </div></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q" aria-expanded="false">
+          Was, wenn ich nicht in Wien wohne?
+          <span class="faq-toggle" aria-hidden="true"></span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          Viele Teilnehmer:innen reisen aus DACH und darüber hinaus an. Die Module sind live vor Ort – kein Hybrid. Genau diese Konzentration macht das Format aus.
+        </div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== APPLY ============================== -->
+<section class="apply" id="apply">
+  <div class="apply-bg" aria-hidden="true">
+    <img src="photos/ali-stage.jpg"
+         alt=""
+         loading="lazy" decoding="async" />
+  </div>
+  <div class="container">
+    <div class="apply-card reveal">
+      <span class="eyebrow">Bewerbung</span>
+      <h2>Bereit für <span style="color:var(--pink);">deine Bühne?</span></h2>
+      <p class="lead">
+        Schreib uns ein paar Sätze über dich, deine Bühne, dein Warum. Wir melden uns persönlich – innerhalb von 5 Werktagen.
+      </p>
+
+      <!-- TODO: Action-URL durch echten Endpoint ersetzen (Formspree/Web3Forms/eigener Server). Demo-Modus aktiv. -->
+      <form class="apply-form" id="applyForm"
+            action="https://formspree.io/f/REPLACE_FORM_ID"
+            method="POST"
+            data-demo="true"
+            novalidate>
+        <div class="form-row">
+          <label class="field">
+            <span class="label">Name</span>
+            <input type="text" name="name" autocomplete="name" required />
+          </label>
+          <label class="field">
+            <span class="label">E-Mail</span>
+            <input type="email" name="email" autocomplete="email" required />
+          </label>
+        </div>
+        <div class="form-row">
+          <label class="field">
+            <span class="label">Was du heute tust</span>
+            <input type="text" name="role" placeholder="Rolle, Branche, Fokus" required />
+          </label>
+          <label class="field">
+            <span class="label">LinkedIn / Website</span>
+            <input type="url" name="link" placeholder="https://" inputmode="url" />
+          </label>
+        </div>
+        <label class="field">
+          <span class="label">Auf welche Bühne(n) willst du?</span>
+          <textarea name="stage" rows="3" placeholder="Wo siehst du dich auf der Bühne stehen? 2–3 Sätze." required></textarea>
+        </label>
+        <label class="field">
+          <span class="label">Warum du? Was treibt dich?</span>
+          <textarea name="why" rows="5" placeholder="Was ist deine Botschaft? Was hat dich hierher gebracht? Maximal 5 Sätze." required></textarea>
+        </label>
+        <label class="checkbox-field">
+          <input type="checkbox" name="consent" required />
+          <span>Ich stimme der Verarbeitung meiner Daten zur Bearbeitung der Bewerbung zu. (<a href="https://ali.do/datenschutz/" target="_blank" rel="noopener">Datenschutz</a>)</span>
+        </label>
+        <button type="submit" class="btn btn-pink form-submit">
+          Bewerbung senden
+          <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        </button>
+        <div class="form-status" id="formStatus" aria-live="polite"></div>
+      </form>
+
+      <div class="apply-meta">
+        <span class="pill"><strong>09.10.2026</strong> · Kick-off</span>
+        <span class="pill"><strong>Wien</strong> · Live</span>
+        <span class="pill"><strong>€&nbsp;6.000</strong> · exkl. USt.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== LIGHTBOX ============================== -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Foto-Galerie" hidden>
+  <div class="lb-counter" id="lbCounter">1 / 7</div>
+  <button class="lb-btn lb-close" id="lbClose" aria-label="Galerie schließen">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+  </button>
+  <button class="lb-btn lb-prev" id="lbPrev" aria-label="Vorheriges Foto">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+  </button>
+  <button class="lb-btn lb-next" id="lbNext" aria-label="Nächstes Foto">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+  </button>
+  <div class="lightbox-frame">
+    <img class="lightbox-img" id="lbImg" src="" alt="" />
+    <div class="lightbox-caption" id="lbCaption"></div>
+  </div>
+</div>
+
+<!-- ============================== FOOTER ============================== -->
+<footer>
+  <div class="container">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <div class="brand">
+          <span class="brand-mark" aria-hidden="true"></span>
+          <span>ALI'S&nbsp;SPEAKER&nbsp;MASTERCLASS</span>
+        </div>
+        <p>Ein Programm von Ali Mahlodji für Menschen, die mehr wollen als gut sprechen – die Räume bewegen wollen.</p>
+        <a href="https://futureone.io/" rel="noopener" class="foot-logo" aria-label="Powered by futureOne">
+          <span class="label">powered by</span>
+          <img src="photos/logos/futureone.svg" alt="futureOne" />
+        </a>
+        <div class="foot-social" aria-label="Ali Mahlodji auf Social Media">
+          <a href="https://www.instagram.com/ali.mahlodji.official/" target="_blank" rel="noopener" aria-label="Ali Mahlodji auf Instagram">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="3" width="18" height="18" rx="5"/>
+              <circle cx="12" cy="12" r="4"/>
+              <circle cx="17.5" cy="6.5" r=".7" fill="currentColor" stroke="none"/>
+            </svg>
+          </a>
+          <a href="https://www.linkedin.com/in/alimahlodji/" target="_blank" rel="noopener" aria-label="Ali Mahlodji auf LinkedIn">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14zM8.339 18.337V10.21H5.667v8.127h2.672zM7.003 9.075a1.518 1.518 0 1 0 0-3.036 1.518 1.518 0 0 0 0 3.036zm11.337 9.262v-4.467c0-2.387-.515-4.222-3.302-4.222-1.339 0-2.238.735-2.604 1.43h-.038v-1.21H9.83v8.469h2.671v-4.187c0-1.105.21-2.176 1.578-2.176 1.351 0 1.371 1.262 1.371 2.247v4.116h2.689z"/>
+            </svg>
+          </a>
+          <a href="https://www.facebook.com/alimahlodji" target="_blank" rel="noopener" aria-label="Ali Mahlodji auf Facebook">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+      <div class="foot-col">
+        <h4>Programm</h4>
+        <ul>
+          <li><a href="#about">Über Ali</a></li>
+          <li><a href="#curriculum">Module</a></li>
+          <li><a href="#cohorts">Bisherige Jahrgänge</a></li>
+          <li><a href="#journey">Ablauf</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4>Kontakt &amp; Mehr</h4>
+        <ul>
+          <li><a href="https://ali.do/" rel="noopener">ali.do</a></li>
+          <li><a href="https://futureone.io/" rel="noopener">futureone.io</a></li>
+          <li><a href="#apply">Bewerben</a></li>
+          <li><a href="https://ali.do/impressum/" rel="noopener">Impressum</a></li>
+          <li><a href="https://ali.do/datenschutz/" rel="noopener">Datenschutz</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© <span id="year">2026</span> Ali Mahlodji · Speaker Masterclass</span>
+      <span>Made with <span style="color:var(--pink);" aria-hidden="true">❤</span><span class="visually-hidden">Liebe</span> by <a href="https://www.nfbrands.xyz/" target="_blank" rel="noopener" class="credit-link">NFBrands.X</a></span>
+    </div>
+  </div>
+</footer>
+
+<!-- ============================== JS ============================== -->
+<script>
+(function(){
+  // year
+  var y = document.getElementById('year');
+  if (y) y.textContent = new Date().getFullYear();
+
+  // nav scroll state
+  var nav = document.getElementById('nav');
+  function onScroll(){
+    if (window.scrollY > 24) nav.classList.add('scrolled');
+    else nav.classList.remove('scrolled');
+  }
+  document.addEventListener('scroll', onScroll, { passive:true });
+  onScroll();
+
+  // reveal on scroll
+  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if ('IntersectionObserver' in window && !reduced){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if (en.isIntersecting){ en.target.classList.add('visible'); io.unobserve(en.target); }
+      });
+    }, { threshold:0.12, rootMargin:'0px 0px -40px 0px' });
+    document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+  } else {
+    document.querySelectorAll('.reveal').forEach(function(el){ el.classList.add('visible'); });
+  }
+
+  // FAQ accordion
+  document.querySelectorAll('.faq-item').forEach(function(item){
+    var q = item.querySelector('.faq-q');
+    q.addEventListener('click', function(){
+      var open = item.classList.toggle('open');
+      q.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+  });
+
+  // Apply form
+  var applyForm = document.getElementById('applyForm');
+  var formStatus = document.getElementById('formStatus');
+  if (applyForm){
+    applyForm.addEventListener('submit', function(e){
+      e.preventDefault();
+      formStatus.className = 'form-status';
+      formStatus.textContent = '';
+      if (!applyForm.checkValidity()){ applyForm.reportValidity(); return; }
+      var btn = applyForm.querySelector('button[type="submit"]');
+      var original = btn.innerHTML;
+      btn.disabled = true; btn.innerHTML = 'Wird gesendet…';
+      formStatus.textContent = 'Bewerbung wird übermittelt…';
+      if (applyForm.dataset.demo === 'true' || /REPLACE_FORM_ID/.test(applyForm.action)){
+        setTimeout(function(){
+          formStatus.className = 'form-status success';
+          formStatus.textContent = 'Demo-Modus: Formular ist eingebaut. Sobald Endpoint hinterlegt ist, geht die Bewerbung ein.';
+          btn.disabled = false; btn.innerHTML = original;
+        }, 1000);
+        return;
+      }
+      var data = new FormData(applyForm);
+      fetch(applyForm.action, { method:'POST', body:data, headers:{ 'Accept':'application/json' } })
+      .then(function(res){
+        if (res.ok){
+          applyForm.reset();
+          formStatus.className = 'form-status success';
+          formStatus.textContent = 'Danke. Wir melden uns innerhalb von 5 Werktagen.';
+        } else { throw new Error('Server-Fehler ' + res.status); }
+      })
+      .catch(function(){
+        formStatus.className = 'form-status error';
+        formStatus.textContent = 'Da ist etwas schiefgelaufen. Bitte schreib uns direkt: masterclass@ali.do';
+      })
+      .finally(function(){ btn.disabled = false; btn.innerHTML = original; });
+    });
+  }
+
+  // ============================== LIGHTBOX ==============================
+  var photos = Array.prototype.slice.call(document.querySelectorAll('.gallery-grid .photo'));
+  var lb = document.getElementById('lightbox');
+  var lbImg = document.getElementById('lbImg');
+  var lbCaption = document.getElementById('lbCaption');
+  var lbCounter = document.getElementById('lbCounter');
+  var lbClose = document.getElementById('lbClose');
+  var lbPrev = document.getElementById('lbPrev');
+  var lbNext = document.getElementById('lbNext');
+  var currentIdx = 0;
+  var lastFocus = null;
+
+  function showCurrent(){
+    if (!photos.length) return;
+    var photo = photos[currentIdx];
+    var img = photo.querySelector('img');
+    var cap = photo.querySelector('.photo-cap');
+    lbImg.classList.add('swap');
+    setTimeout(function(){
+      lbImg.src = img.src;
+      lbImg.alt = img.alt || '';
+      if (cap){ lbCaption.innerHTML = cap.innerHTML; }
+      else { lbCaption.innerHTML = ''; }
+      lbCounter.textContent = (currentIdx + 1) + ' / ' + photos.length;
+      lbImg.classList.remove('swap');
+    }, 120);
+  }
+  function openLightbox(idx){
+    currentIdx = idx;
+    lastFocus = document.activeElement;
+    showCurrent();
+    lb.removeAttribute('hidden');
+    requestAnimationFrame(function(){ lb.classList.add('open'); });
+    document.body.classList.add('lb-locked');
+    setTimeout(function(){ lbClose.focus(); }, 50);
+  }
+  function closeLightbox(){
+    lb.classList.remove('open');
+    document.body.classList.remove('lb-locked');
+    setTimeout(function(){
+      lb.setAttribute('hidden', '');
+      if (lastFocus && lastFocus.focus) lastFocus.focus();
+    }, 280);
+  }
+  function navigate(dir){
+    if (!photos.length) return;
+    currentIdx = (currentIdx + dir + photos.length) % photos.length;
+    showCurrent();
+  }
+
+  photos.forEach(function(p, i){
+    p.setAttribute('tabindex', '0');
+    p.setAttribute('role', 'button');
+    p.setAttribute('aria-label', 'Foto vergrößern');
+    p.addEventListener('click', function(){ openLightbox(i); });
+    p.addEventListener('keydown', function(e){
+      if (e.key === 'Enter' || e.key === ' '){
+        e.preventDefault();
+        openLightbox(i);
+      }
+    });
+  });
+
+  if (lbClose) lbClose.addEventListener('click', closeLightbox);
+  if (lbPrev) lbPrev.addEventListener('click', function(){ navigate(-1); });
+  if (lbNext) lbNext.addEventListener('click', function(){ navigate(1); });
+  lb.addEventListener('click', function(e){
+    if (e.target === lb || e.target === lbImg.parentElement) closeLightbox();
+  });
+  document.addEventListener('keydown', function(e){
+    if (!lb.classList.contains('open')) return;
+    if (e.key === 'Escape'){ closeLightbox(); }
+    else if (e.key === 'ArrowLeft'){ navigate(-1); }
+    else if (e.key === 'ArrowRight'){ navigate(1); }
+  });
+
+  // Touch swipe support for lightbox
+  var touchStartX = 0;
+  var touchEndX = 0;
+  lb.addEventListener('touchstart', function(e){ touchStartX = e.changedTouches[0].screenX; }, { passive:true });
+  lb.addEventListener('touchend', function(e){
+    touchEndX = e.changedTouches[0].screenX;
+    var diff = touchEndX - touchStartX;
+    if (Math.abs(diff) > 50){
+      navigate(diff < 0 ? 1 : -1);
+    }
+  }, { passive:true });
+
+  // Smooth scroll
+  document.querySelectorAll('a[href^="#"]').forEach(function(a){
+    a.addEventListener('click', function(e){
+      var href = a.getAttribute('href');
+      if (href.length > 1){
+        var t = document.querySelector(href);
+        if (t){ e.preventDefault(); t.scrollIntoView({ behavior:'smooth', block:'start' }); }
+      }
+    });
+  });
+})();
+</script>
+
+</body>
+</html>
